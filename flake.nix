@@ -11,6 +11,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # Stylix
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Firefox
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -30,6 +36,7 @@
           specialArgs = {inherit inputs;};
           modules = [
             ./hosts/danilo/configuration.nix
+            inputs.stylix.nixosModules.stylix
             inputs.home-manager.nixosModules.default
           ];
         };

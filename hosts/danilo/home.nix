@@ -13,18 +13,6 @@
   ];
 
 
-  # ---------------- ENVIRONMENT ----------------
-  # Cursor
-  gtk = {
-    enable = true;
-    cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
-  };
-
-
   # ---------------- OTHER STUFF ----------------
   # The home.packages option allows you to install Nix packages into your
   # environment.

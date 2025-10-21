@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/nixos/pipewire.nix
     ../../modules/nixos/games.nix
+    ../../modules/nixos/stylix.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -23,28 +24,34 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     # System tools
-    pkgs.kitty # Terminal
+    kitty # Terminal
     kdePackages.dolphin # File Manager
-    pkgs.neofetch
-    pkgs.htop
+    neofetch
+    htop
 
     # Apps
-    pkgs.vscode
-    pkgs.discord
-    pkgs.git
+    vscode
+    discord
+    git
 
     # Utils
-    pkgs.ntfs3g # NTFS support
+    ntfs3g # NTFS support
+    nh # Nix CLI helper
 
     # Hyprland tools
-    pkgs.wofi # Application launcher
-    pkgs.ly # Login manager
-    pkgs.dunst # Notification daemon
-    pkgs.hyprpolkitagent # Polkit agent
-    pkgs.waybar # Status bar
-    pkgs.nwg-look # GTK theme manager
-    pkgs.bibata-cursors # Cursor theme
+    wofi # Application launcher
+    ly # Login manager
+    dunst # Notification daemon
+    hyprpolkitagent # Polkit agent
+    waybar # Status bar
+    swww # Wallpaper
   ];
+
+
+  # ---------------- TERMINAL VARIABLES ----------------
+  environment.sessionVariables = {
+    NH_OS_FLAKE = "/home/danilo/nixos/";
+  };
 
 
   # ---------------- USER ----------------
@@ -76,7 +83,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Hostname
-  networking.hostName = "nixos-desktop";
+  networking.hostName = "danilo";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking

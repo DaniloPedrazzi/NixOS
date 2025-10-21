@@ -18,12 +18,24 @@
                 "systemctl --user start hyprpolkitagent"
                 "waybar"
                 "dunst"
+                "swww-daemon && swww img /home/danilo/nixos/wallpapers/wallpaper.png -t random --transition-duration 2"
             ];
 
             # ---------------- MONITORS ----------------
             monitor = [
                 "DP-1, 2560x1440@165, 0x0, 1"
                 "HDMI-A-1, 1920x1080@75, 2560x300, 1"
+            ];
+            workspace = [
+                "1, monitor:DP-1, default:true"
+                "2, monitor:HDMI-A-1"
+                "3, monitor:DP-1"
+                "4, monitor:DP-1"
+                "5, monitor:DP-1"
+                "6, monitor:HDMI-A-1"
+                "7, monitor:DP-1"
+                "8, monitor:DP-1"
+                "9, monitor:DP-1"
             ];
 
             # ---------------- ENVIRONMENT ----------------
@@ -43,8 +55,8 @@
                 gaps_in = 5;
                 gaps_out = 20;
                 border_size = 2;
-                "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-                "col.inactive_border" = "rgba(595959aa)";
+                # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+                # "col.inactive_border" = "rgba(595959aa)";
                 resize_on_border = false;
                 allow_tearing = false;
                 layout = "dwindle";
@@ -57,10 +69,10 @@
                 active_opacity = 1.0;
                 inactive_opacity = 1.0;
                 shadow = {
-                enabled = true;
-                range = 4;
-                render_power = 3;
-                color = "rgba(1a1a1aee)";
+                    enabled = true;
+                    range = 4;
+                    render_power = 3;
+                    # color = "rgba(1a1a1aee)";
                 };
                 blur = {
                 enabled = true;
@@ -112,7 +124,7 @@
 
             misc = {
                 force_default_wallpaper = -1;
-                disable_hyprland_logo = false;
+                # disable_hyprland_logo = false;
             };
 
             # ---------------- INPUT ----------------
